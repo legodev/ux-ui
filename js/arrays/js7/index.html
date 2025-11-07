@@ -44,7 +44,13 @@
       <p class="footer__year" id="year"></p>
     </footer>
 
-    <script src="/script.js"></script>
+    <script>
+      const year = document.getElementById('year')
+
+      let date = new Date()
+
+      year.innerText = '2025-' + date.getFullYear() + ' Leonardo González'
+    </script>
 
     <script>
       function showNumbers() {

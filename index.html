@@ -11,7 +11,9 @@
       <nav class="header__nav">
         <ul class="header__container-links">
           <li><a class="header__links" href="index.html">Home</a></li>
-          <li><a class="header__links" href="html/html1/index.html">HTML</a></li>
+          <li>
+            <a class="header__links" href="html/html1/index.html">HTML</a>
+          </li>
           <li><a class="header__links" href="/css/index.html">CSS</a></li>
           <li><a class="header__links" href="/js/index.html">JavaScript</a></li>
         </ul>
@@ -33,6 +35,13 @@
       <p class="footer__year" id="year"></p>
     </footer>
 
-    <script src="/script.js"></script>
+
+    <script>
+      const year = document.getElementById('year')
+
+      let date = new Date()
+
+      year.innerText = '2025-' + date.getFullYear() + ' Leonardo González'
+    </script>
   </body>
 </html>
