@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Animations 2</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+        <header class="header__container">
+      <nav class="header__nav">
+        <ul class="header__container-links">
+          <li><a class="header__links" href="/index.html">Home</a></li>
+          <li>
+            <a class="header__links" href="/html/html1/index.html">HTML</a>
+          </li>
+          <li><a class="header__links" href="/css/index.html">CSS</a></li>
+          <li><a class="header__links" href="/js/index.html">JavaScript</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main__container">
+    <section class="section__container">
+      <h1>Cuadrado animado</h1>
+      <div class="main__box" id="box"></div>
+      <section class="main__container-btn">
+        <button class="main__btn" id="move" onclick="move()">
+          Mover a la derecha
+        </button>
+        <button class="main__btn" id="back" onclick="back()">Volver</button>
+      </section>
+    </section>
+    </main>
+    
+
+    <script>
+      const box = document.getElementById('box')
+      let isMoved = false
+      
+      function move() {
+        if (!isMoved) {
+          box.classList.add('isMoved')
+          isMoved = true
+        }
+      }
+
+      function back() {
+        if (isMoved) {
+          box.classList.remove('isMoved')
+          isMoved = false
+        }
+      }
+    </script>
+  </body>
+</html>

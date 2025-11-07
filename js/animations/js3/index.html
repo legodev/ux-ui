@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Animations 3</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header__container">
+      <nav class="header__nav">
+        <ul class="header__container-links">
+          <li><a class="header__links" href="/index.html">Home</a></li>
+          <li>
+            <a class="header__links" href="/html/html1/index.html">HTML</a>
+          </li>
+          <li><a class="header__links" href="/css/index.html">CSS</a></li>
+          <li><a class="header__links" href="/js/index.html">JavaScript</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main__container">
+      <section class="section__container">
+        <h1>Mensaje secreto</h1>
+        <section class="main__box" id="container">
+          <div class="front"><p>¡Pasa el mouse!</p></div>
+          <div class="back"><p>¡Mensaje oculto!</p></div>
+        </section>
+      </section>
+    </main>
+    <footer class="footer__container">
+      <p class="footer__year" id="year"></p>
+    </footer>
+
+    <script src="/script.js"></script>
+
+    <script>
+      const container = document.getElementById('container')
+
+      function flipCard() {
+        container.classList.add('flip')
+      }
+
+      function unFlipCard() {
+        container.classList.remove('flip')
+      }
+
+      container.addEventListener('mouseover', flipCard)
+      container.addEventListener('mouseout', unFlipCard)
+    </script>
+  </body>
+</html>

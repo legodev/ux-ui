@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Ejercicio 5</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header__container">
+      <nav class="header__nav">
+        <ul class="header__container-links">
+          <li><a class="header__links" href="/index.html">Home</a></li>
+          <li>
+            <a class="header__links" href="/html/html1/index.html">HTML</a>
+          </li>
+          <li><a class="header__links" href="/css/index.html">CSS</a></li>
+          <li><a class="header__links" href="/js/index.html">JavaScript</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main__container">
+      <section class="exercise__container">
+        <h1 class="exercise__title">
+          Ejercicio 05: ¿Dentro del primer o segundo rango?
+        </h1>
+        <section class="exercise__container-p">
+          <h3 class="exercise__subtitle">Instrucciones</h3>
+          <p>Tenemos dos rangos válidos: <span>100 a 300 y 500 a 800</span></p>
+          <p>
+            Vamos a comprobar en cual de ellos se encuentra nuestra variable
+            <small>valor</small>
+          </p>
+          <p>
+            Si no está en ninguno, también lo sabremos. ¡Es como un juego de
+            adivinanzas con números!
+          </p>
+        </section>
+        <section class="exercise__result-container">
+          <p id="result">Por favor presione el botón.</p>
+        </section>
+        <section class="exercise__container-btn">
+          <button id="btn" onclick="isEqual(200)">Valor: 200</button>
+          <button id="btn" onclick="isEqual(400)">Valor: 400</button>
+          <button id="btn" onclick="isEqual(600)">Valor: 600</button>
+          <button id="btn" onclick="isEqual(900)">Valor: 900</button>
+        </section>
+      </section>
+    </main>
+    <footer class="footer__container">
+      <p class="footer__year" id="year"></p>
+    </footer>
+
+    <script src="/script.js"></script>
+    <script>
+      function isEqual(value) {
+        let paragraph = document.getElementById('result')
+
+        let firstRange = `El valor ${value} está dentro del PRIMER rango (100-300)`
+        let secondRange = `El valor ${value} está dentro del SEGUNDO rango (500-800)`
+        let incorrectText = `El valor ${value} no está en ninguno de los rangos válidos`
+
+        if (value >= 100 && value <= 300) {
+          paragraph.innerText = firstRange
+        } else if (value >= 500 && value <= 800) {
+          paragraph.innerText = secondRange
+        } else {
+          paragraph.innerText = incorrectText
+        }
+      }
+    </script>
+  </body>
+</html>

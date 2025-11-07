@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Ejercicio 13</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header__container">
+      <nav class="header__nav">
+        <ul class="header__container-links">
+          <li><a class="header__links" href="/index.html">Home</a></li>
+          <li>
+            <a class="header__links" href="/html/html1/index.html">HTML</a>
+          </li>
+          <li><a class="header__links" href="/css/index.html">CSS</a></li>
+          <li><a class="header__links" href="/js/index.html">JavaScript</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main__container">
+      <section class="exercise__container">
+        <h1 class="exercise__title">Ejercicio 13</h1>
+        <section class="exercise__container-p">
+          <p>
+            Informe completo: muestra todos los números del 1 al 20 y, al final,
+            tres totales: suma de pares, suma de impares y suma general
+          </p>
+        </section>
+        <section class="exercise__container-txt">
+          <textarea readonly name="" id="txt">
+Haz click para ejecutar.</textarea
+          >
+        </section>
+        <button onclick="showNumbers()" class="btn">¡Mostrar Números!</button>
+      </section>
+    </main>
+    <footer class="footer__container">
+      <p class="footer__year" id="year"></p>
+    </footer>
+
+    <script src="/script.js"></script>
+
+    <script>
+      function showNumbers() {
+        let txt = document.getElementById('txt')
+        let numbers = ''
+        let evenAddition = 0
+        let oddAddition = 0
+        let generalAddition = 0
+
+        for (let i = 1; i <= 20; i++) {
+          numbers += i + '\n'
+          if (i % 2 === 0) {
+            evenAddition += i
+          } else if (i % 2 !== 0) {
+            oddAddition += i
+          } else {
+            console.log('Número no válido')
+          }
+
+          generalAddition += i
+        }
+
+        txt.innerHTML = numbers
+        txt.innerHTML += '\n' + 'La suma de pares es: ' + evenAddition
+        txt.innerHTML += '\n' + 'La suma de impares es: ' + oddAddition
+        txt.innerHTML += '\n' + 'La suma general es: ' + generalAddition
+      }
+    </script>
+  </body>
+</html>

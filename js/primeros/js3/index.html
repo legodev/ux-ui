@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Ejercicio 3</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header__container">
+      <nav class="header__nav">
+        <ul class="header__container-links">
+          <li><a class="header__links" href="/index.html">Home</a></li>
+          <li>
+            <a class="header__links" href="/html/html1/index.html">HTML</a>
+          </li>
+          <li><a class="header__links" href="/css/index.html">CSS</a></li>
+          <li><a class="header__links" href="/js/index.html">JavaScript</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main__container">
+      <section class="exercise__container">
+        <h1 class="exercise__title">
+          Ejercicio 03: ¿Está en el rango 100-300?
+        </h1>
+        <section class="exercise__container-p">
+          <h3 class="exercise__subtitle">Instrucciones</h3>
+          <p>
+            En este ejercicio, vamos a comprobar si un número se encuentra
+            dentro del rango de <span>100 a 300 (incluidos)</span>
+          </p>
+          <p>
+            Usaremos el operador lógico && (AND) para verificar que el número
+            sea mayor o igual a 100 y menor o igual a 300
+          </p>
+        </section>
+        <section class="exercise__result-container">
+          <p id="result">Por favor presione el botón.</p>
+        </section>
+        <section class="exercise__container-btn">
+          <button id="btn" onclick="isEqual(50)">Valor: 50</button>
+          <button id="btn" onclick="isEqual(100)">Valor: 100</button>
+          <button id="btn" onclick="isEqual(250)">Valor: 250</button>
+          <button id="btn" onclick="isEqual(350)">Valor: 350</button>
+        </section>
+      </section>
+    </main>
+    <footer class="footer__container">
+      <p class="footer__year" id="year"></p>
+    </footer>
+
+    <script src="/script.js"></script>
+
+    <script>
+      function isEqual(value) {
+        let paragraph = document.getElementById('result')
+        let correctText = `Correcto! El valor ${value} está DENTRO del rango 100-300`
+        let incorrectText = `Incorrecto! El valor ${value} está FUERA del rango 100-300`
+
+        if (value >= 100 && value <= 300) {
+          paragraph.innerText = correctText
+        } else {
+          paragraph.innerText = incorrectText
+        }
+      }
+    </script>
+  </body>
+</html>

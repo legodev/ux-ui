@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Animations 4</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header__container">
+      <nav class="header__nav">
+        <ul class="header__container-links">
+          <li><a class="header__links" href="/index.html">Home</a></li>
+          <li>
+            <a class="header__links" href="/html/html1/index.html">HTML</a>
+          </li>
+          <li><a class="header__links" href="/css/index.html">CSS</a></li>
+          <li><a class="header__links" href="/js/index.html">JavaScript</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main__container">
+      <section class="section__container">
+        <h1>Barra de progreso animada</h1>
+        <section class="main__bar">
+          <div class="main__bar-charge" id="progress"></div>
+        </section>
+        <button class="main__btn" onclick="changeProgress()">Cargar</button>
+      </section>
+    </main>
+    <footer class="footer__container">
+      <p class="footer__year" id="year"></p>
+    </footer>
+
+    <script src="/script.js"></script>
+
+    <script>
+      const progress = document.getElementById('progress')
+      let width = 0
+
+      function barProgress() {
+        progress.style.width = width + '%'
+
+        if (width < 100) {
+          width += 1
+        }
+      }
+
+      function changeProgress() {
+        const interval = setInterval(barProgress, 20)
+
+        setTimeout(() => {
+          clearInterval(interval)
+        }, 2020)
+      }
+    </script>
+  </body>
+</html>

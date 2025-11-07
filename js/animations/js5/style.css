@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+}
+
+.section__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f3e5f5;
+  padding: 25px;
+  gap: 50px;
+  width: 600px;
+  margin: 50px auto;
+  color: #000;
+}
+
+.menu-container {
+  width: 100%;
+}
+
+.menu-content {
+  display: flex;
+  flex-direction: column;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.4s ease-out;
+  background-color: #ffe0b2;
+}
+
+.menu-content a {
+  text-decoration: none;
+  color: #000;
+  border: 1px solid #ff9800;
+  padding: 10px;
+  width: 20%;
+}
+
+#menu-header {
+  cursor: pointer;
+  background-color: #ff9800;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+}
+
+:root {
+  --primary-color: yellow;
+  --secondary-color: #222;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #222;
+  color: #fff;
+  position: relative;
+}
+
+.header__container {
+  width: 100%;
+  padding: 10px 15px;
+  background-color: #111;
+}
+
+.header__nav {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.header__container-links {
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+}
+
+.header__links {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1.15rem;
+  padding: 15px 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  color: var(--primary-color);
+}
+
+.header__links:hover {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.main__container {
+  width: 1200px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 100px;
+}
+
+.main__nav-container {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  margin: 0 auto;
+  width: 40%;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.main__title {
+  font-size: 3rem;
+}
+
+.main__list {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+}
+
+.main__link {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.main__link:hover {
+  color: var(--primary-color);
+}
+
+.footer__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #111;
+  height: 50px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 0 auto;
+}

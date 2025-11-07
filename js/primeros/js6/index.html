@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Ejercicio 6</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header__container">
+      <nav class="header__nav">
+        <ul class="header__container-links">
+          <li><a class="header__links" href="/index.html">Home</a></li>
+          <li>
+            <a class="header__links" href="/html/html1/index.html">HTML</a>
+          </li>
+          <li><a class="header__links" href="/css/index.html">CSS</a></li>
+          <li><a class="header__links" href="/js/index.html">JavaScript</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main__container">
+      <section class="exercise__container">
+        <h1 class="exercise__title">Ejercicio 06: Clasificador de Rangos</h1>
+        <section class="exercise__container-p">
+          <h3 class="exercise__subtitle">Instrucciones</h3>
+          <p>
+            Este ejercicio clasifica cualquier número en
+            <span>cinco zonas:</span>
+          </p>
+          <ol>
+            <li><span>ANTES</span> de los rangos (menor que 100)</li>
+            <li>Dentro del <span>PRIMER rango</span> (100 a 300)</li>
+            <li>
+              <span>ENTRE</span> los rangos (301 a 499) - ¡Zona no válida!
+            </li>
+            <li>Dentro del <span>SEGUNDO rango</span> (500 a 800)</li>
+            <li><span>SUPERA</span> los rangos (mayor a 800)</li>
+          </ol>
+          <p>
+            ¡Cambia el valor en el archivo <small>ejercicio06.js</small> para
+            probar diferentes números!
+          </p>
+        </section>
+        <section class="exercise__result-container" id="result__container">
+          <p id="result">
+            <span>Haz click en el botón para clasificar el número</span>
+          </p>
+        </section>
+        <section class="exercise__container-btn">
+          <button id="btn" onclick="isEqual(99)">Valor: 99</button>
+          <button id="btn" onclick="isEqual(101)">Valor: 101</button>
+          <button id="btn" onclick="isEqual(400)">Valor: 400</button>
+          <button id="btn" onclick="isEqual(700)">Valor: 700</button>
+          <button id="btn" onclick="isEqual(801)">Valor: 801</button>
+        </section>
+      </section>
+    </main>
+    <footer class="footer__container">
+      <p class="footer__year" id="year"></p>
+    </footer>
+
+    <script src="/script.js"></script>
+
+    <script>
+      function isEqual(value) {
+        let containerText = document.getElementById('result__container')
+        let paragraph = document.getElementById('result')
+
+        let beforeFirstRange = `El valor ${value} está ANTES de los rangos válidos.`
+        let firstRange = `El valor ${value} está dentro del PRIMER rango (100-300).`
+        let betweenRanges = `El valor ${value} está ENTRE los rangos (301 - 499). - ¡No válido!`
+        let secondRange = `El valor ${value} está dentro del SEGUNDO rango (500-800).`
+        let afterSecondRange = `El valor ${value} SUPERA los rangos válidos.`
+
+        function styles(text, classC, classP) {
+          paragraph.innerText = text
+          containerText.className = 'exercise__result-container'
+          paragraph.className = ''
+          containerText.classList.add(classC)
+          paragraph.classList.add(classP)
+        }
+
+        if (value < 100) {
+          styles(beforeFirstRange, 'before__c', 'before__p')
+        } else if (value >= 100 && value <= 300) {
+          styles(firstRange, 'first__c', 'first__p')
+        } else if (value > 300 && value < 500) {
+          styles(betweenRanges, 'between__c', 'between__p')
+        } else if (value >= 500 && value <= 800) {
+          styles(secondRange, 'second__c', 'second__p')
+        } else {
+          styles(afterSecondRange, 'after__c', 'after__p')
+        }
+      }
+    </script>
+  </body>
+</html>

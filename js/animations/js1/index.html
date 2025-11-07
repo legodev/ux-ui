@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Animations 1</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header__container">
+      <nav class="header__nav">
+        <ul class="header__container-links">
+          <li><a class="header__links" href="/index.html">Home</a></li>
+          <li>
+            <a class="header__links" href="/html/html1/index.html">HTML</a>
+          </li>
+          <li><a class="header__links" href="/css/index.html">CSS</a></li>
+          <li><a class="header__links" href="/js/index.html">JavaScript</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main__container">
+      <section class="section__container">
+        <button
+          class="main__btn"
+          id="btn1"
+          onclick="changeColor('btn1','#161566')"
+        >
+          Haz click para cambiar mi color
+        </button>
+        <button
+          class="main__btn"
+          id="btn2"
+          onclick="changeColor('btn2','#c536b2')"
+        >
+          Haz click para cambiar mi color
+        </button>
+        <button
+          class="main__btn"
+          id="btn3"
+          onclick="changeColor('btn3','#616083')"
+        >
+          Haz click para cambiar mi color
+        </button>
+        <button
+          class="main__btn"
+          id="btn4"
+          onclick="changeColor('btn4','#211300')"
+        >
+          Haz click para cambiar mi color
+        </button>
+      </section>
+    </main>
+    <footer class="footer__container">
+      <p class="footer__year" id="year"></p>
+    </footer>
+
+    <script src="/script.js"></script>
+
+    <script>
+      const btn1 = document.getElementById('btn1')
+      const btn2 = document.getElementById('btn2')
+      const btn3 = document.getElementById('btn3')
+      const btn4 = document.getElementById('btn4')
+
+      const color1 = '#9c27b0'
+      const color2 = '#2196f3'
+      const color3 = '#4caf50'
+      const color4 = '#f44336'
+
+      btn1.style.backgroundColor = color1
+      btn2.style.backgroundColor = color2
+      btn3.style.backgroundColor = color3
+      btn4.style.backgroundColor = color4
+
+      function changeColor(btn, value) {
+        switch (btn) {
+          case 'btn1':
+            btn1.style.backgroundColor = value
+            setTimeout(() => {
+              btn1.style.backgroundColor = color1
+            }, 1000)
+            break
+          case 'btn2':
+            btn2.style.backgroundColor = value
+            setTimeout(() => {
+              btn2.style.backgroundColor = color2
+            }, 1000)
+            break
+          case 'btn3':
+            btn3.style.backgroundColor = value
+            setTimeout(() => {
+              btn3.style.backgroundColor = color3
+            }, 1000)
+            break
+          case 'btn4':
+            btn4.style.backgroundColor = value
+            setTimeout(() => {
+              btn4.style.backgroundColor = color4
+            }, 1000)
+
+            break
+
+          default:
+            break
+        }
+      }
+    </script>
+  </body>
+</html>

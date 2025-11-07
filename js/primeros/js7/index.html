@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Ejercicio 7</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header__container">
+      <nav class="header__nav">
+        <ul class="header__container-links">
+          <li><a class="header__links" href="/index.html">Home</a></li>
+          <li>
+            <a class="header__links" href="/html/html1/index.html">HTML</a>
+          </li>
+          <li><a class="header__links" href="/css/index.html">CSS</a></li>
+          <li><a class="header__links" href="/js/index.html">JavaScript</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main__container">
+      <section class="exercise__container">
+        <h1 class="exercise__title">Ejercicio 07: Menú de opciones</h1>
+        <h2>Simular un sistema de operaciones CRUD</h2>
+        <section class="exercise__container-p">
+          <h3 class="exercise__subtitle">Instrucciones</h3>
+          <p>
+            Selecciona una opción del menú desplegable y haz click en
+            "Ejecutar".
+          </p>
+          <p>
+            El sistema usará una estructura <small>switch</small> para
+            identificar que opción elegiste y mostrará un mensaje personalizado
+            con un ícono y color distintivo
+          </p>
+          <p>
+            Opciones: <span>INS</span> (Insertar), <span>DEL</span> (Eliminar),
+            <span>UPD</span> (Actualizar), <span>LST</span> (Listar) y
+            <span>END</span> (Finalizar).
+          </p>
+        </section>
+        <section class="exercise__container-btn">
+          <select name="" id="crud">
+            <option value="">Selecciona una acción</option>
+            <option value="ins">Insertar (INS)</option>
+            <option value="del">Eliminar (DEL)</option>
+            <option value="upd">Actualizar (UPD)</option>
+            <option value="lst">Listar (LST)</option>
+            <option value="end">Finalizar (END)</option>
+          </select>
+          <button id="btn" onclick="selectedChoice()">Ejecutar</button>
+        </section>
+        <section class="exercise__result-container" id="result__container">
+          <p id="result">
+            <span>Haz click en el botón para clasificar el número</span>
+          </p>
+        </section>
+      </section>
+    </main>
+    <footer class="footer__container">
+      <p class="footer__year" id="year"></p>
+    </footer>
+
+    <script src="/script.js"></script>
+
+    <script>
+      function selectedChoice() {
+        let paragraph = document.getElementById('result')
+        let containerText = document.getElementById('result__container')
+        let select = document.getElementById('crud')
+        let selectValue = select.value
+
+        let ins = ' Haz seleccionado la opción INSERT ➕'
+        let del = ' Haz seleccionado la opción DELETE ❌'
+        let upd = ' Haz seleccionado la opción UPDATE 🔄'
+        let lst = ' Haz seleccionado la opción LIST 📋'
+        let end = ' Haz seleccionado la opción END 🛑'
+
+        function styles(text, classC, classP) {
+          paragraph.innerText = text
+          containerText.className = 'exercise__result-container'
+          paragraph.className = ''
+          containerText.classList.add(classC)
+          paragraph.classList.add(classP)
+        }
+
+        switch (selectValue) {
+          case 'ins':
+            styles(ins, 'ins__c', 'ins__p')
+            break
+
+          case 'del':
+            styles(del, 'del__c', 'del__p')
+            break
+
+          case 'upd':
+            styles(upd, 'upd__c', 'upd__p')
+            break
+
+          case 'lst':
+            styles(lst, 'lst__c', 'lst__p')
+            break
+
+          case 'end':
+            styles(end, 'end__c', 'end__p')
+            break
+
+          default:
+            break
+        }
+      }
+    </script>
+  </body>
+</html>

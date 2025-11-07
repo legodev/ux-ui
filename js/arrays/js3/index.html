@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Arrays 3</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header__container">
+      <nav class="header__nav">
+        <ul class="header__container-links">
+          <li><a class="header__links" href="/index.html">Home</a></li>
+          <li>
+            <a class="header__links" href="/html/html1/index.html">HTML</a>
+          </li>
+          <li><a class="header__links" href="/css/index.html">CSS</a></li>
+          <li><a class="header__links" href="/js/index.html">JavaScript</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main__container">
+      <section class="exercise__container">
+        <h1 class="exercise__title">
+          Ejercicio Arrays 3: Pares desde índice 1
+        </h1>
+        <section class="exercise__container-p">
+          <p>
+            Recorre el array desde la posición 1 (ignora el primer elemento) y
+            muestra solo los números pares.
+          </p>
+        </section>
+        <section>
+          <p>Array: [15, 8, 23, 42, 7, 99, 14, 33, 50, 61]</p>
+        </section>
+        <section class="exercise__container-txt">
+          <textarea readonly name="" id="txt">Haz click para filtrar.</textarea>
+        </section>
+        <button onclick="showNumbers()" class="btn">¡Calcular la suma!</button>
+      </section>
+    </main>
+    <footer class="footer__container">
+      <p class="footer__year" id="year"></p>
+    </footer>
+
+    <script src="/script.js"></script>
+
+    <script>
+      function showNumbers() {
+        let txt = document.getElementById('txt')
+        let array = [15, 8, 23, 42, 7, 99, 14, 33, 50, 61]
+        let txtFor = ''
+        let i = 1
+
+        for (i; i < array.length; i++) {
+          if (array[i] % 2 === 0) {
+            txtFor += `Índice ${i}: ` + array[i] + ' (PAR)' + '\n'
+          }
+        }
+
+        txt.innerHTML = txtFor + '\n'
+      }
+    </script>
+  </body>
+</html>
