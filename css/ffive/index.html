@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practico 5 CSS</title>
+  </head>
+  <body>
+    <header class="header__container">
+      <nav class="header__nav">
+        <ul class="header__container-links">
+          <li><a class="header__links" href="/index.html">Home</a></li>
+          <li>
+            <a class="header__links" href="/html/html1/index.html">HTML</a>
+          </li>
+          <li><a class="header__links" href="/css/index.html">CSS</a></li>
+          <li><a class="header__links" href="/js/index.html">JavaScript</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main__container">
+      <h1 id="tituloPrincipal">Hello World</h1>
+      <p class="destacado">Este es un párrafo de prueba</p>
+      <p class="destacado">Este es otro párrafo de prueba.</p>
+      <section>
+        <table class="tabla">
+          <tr>
+            <td>Imágenes</td>
+            <td>Links</td>
+          </tr>
+          <tr>
+            <td>
+              <a href="seccion1.html"
+                ><img src="images/azul.gif" alt="" class="img-table"
+              /></a>
+            </td>
+            <td><a href="seccion1.html">Sección 1</a></td>
+          </tr>
+          <tr>
+            <td>
+              <a href="seccion2.html"
+                ><img src="images/rojo.png" alt="" class="img-table"
+              /></a>
+            </td>
+            <td><a href="seccion2.html">Sección 2 </a></td>
+          </tr>
+          <tr>
+            <td>
+              <a href="seccion3.html"
+                ><img src="images/amarillo.jpg" alt="" class="img-table"
+              /></a>
+            </td>
+            <td><a href="seccion3.html">Sección 3</a></td>
+          </tr>
+        </table>
+      </section>
+    </main>
+    <footer class="footer__container">
+      <p class="footer__year" id="year"></p>
+    </footer>
+
+    <script>
+      const year = document.getElementById('year')
+
+      let date = new Date()
+
+      year.innerText = '2025-' + date.getFullYear() + ' Leonardo González'
+    </script>
+  </body>
+</html>
